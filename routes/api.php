@@ -120,3 +120,10 @@ Route::get('dias16', function (request $request) {
     $resultado = "dias: " . $dias . ", horas: " . $horas . ", minutos: " . $minutos . ", segundos: " . $segundos;
     return $resultado;
 });
+
+Route::get('compras17', function (request $request) {
+    $precoProduto = $request->input('valorProduto');
+    $quantidade = $request->input('quantidadeComprada');
+    $resultado = "valor total: " . $precoProduto * $quantidade;
+    return $resultado;
+    });
