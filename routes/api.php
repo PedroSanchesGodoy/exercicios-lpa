@@ -80,3 +80,11 @@ Route::get('retangulo', function (request $request) {
     $resultado = "A area do retangulo é " . $base * $altura;
     return $resultado;
 });
+
+Route::get('porcentagem', function (request $request) {
+    $valorOriginal = $request->input('valor');
+    $desconto = $request->input ('desconto');
+    $porcentagem = $valorOriginal / 100;
+    $resultado = $valorOriginal - ($porcentagem * $desconto);  
+    return $resultado;
+});
