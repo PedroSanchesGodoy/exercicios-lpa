@@ -42,3 +42,10 @@ Route::get('divisão', function (request $request) {
     $resultado = $numeroUm / $numeroDois;
     return $resultado;
 });
+
+Route::get('multiplicação', function (request $request) {
+    $numeroUm = $request->input('primeiroNumero');
+    $numeroDois = $request->input('segundoNumero');
+    $resultado = $numeroUm * $numeroDois;
+    return $resultado;
+});
