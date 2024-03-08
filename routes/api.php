@@ -20,3 +20,10 @@ Route::get('receber/nome/data/cidade', function (request $request) {
     $cidade = $request->input('cidade');
     return 'Meu nome é ' . $nome . ' nasci no ano de ' . $ano . ' na cidade de ' . $cidade;
 });
+
+Route::get('calculo', function (request $request) {
+    $numeroUm = $request->input('primeiroNumero');
+    $numeroDois = $request->input('segundoNumero');
+    $resultado = $numeroUm + $numeroDois;
+    return $resultado;
+});
