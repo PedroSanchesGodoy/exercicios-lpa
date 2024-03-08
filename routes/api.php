@@ -96,3 +96,10 @@ Route::get('salario13', function (request $request) {
     $resultado = $salario . " " . $aumento . "% " . $porcentagem * $aumento + $salario;  
     return $resultado;
 });
+
+Route::get('porcentagem14', function (request $request) {
+    $valorCompra = $request->input('valor');
+    $pontos = $valorCompra / 10;
+    $resultado = "Quantidade de pontos recebidos é: " . $pontos;
+    return $resultado;
+});
