@@ -59,3 +59,10 @@ Route::get('media', function (request $request) {
     $resultado = ($numeroUm + $numeroDois + $numerotres + $numeroQuatro + $numeroCinco) / 5;
     return $resultado;
 });
+
+Route::get('questão9', function (request $request) {
+    $numeroUm = $request->input('primeiroNumero');
+    $numeroDois = $request->input('segundoNumero');
+    $resultado = $numeroDois / $numeroUm;
+    return $resultado;
+});
