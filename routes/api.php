@@ -27,3 +27,11 @@ Route::get('calculo', function (request $request) {
     $resultado = $numeroUm + $numeroDois;
     return $resultado;
 });
+
+Route::get('subtração', function (request $request) {
+    $numeroUm = $request->input('primeiroNumero');
+    $numeroDois = $request->input('segundoNumero');
+    $numeroTres = $request->input('terceiroNumero');
+    $resultado = $numeroUm - $numeroDois - $numeroTres;
+    return $resultado;
+});
