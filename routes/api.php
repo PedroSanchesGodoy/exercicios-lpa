@@ -103,3 +103,11 @@ Route::get('porcentagem14', function (request $request) {
     $resultado = "Quantidade de pontos recebidos é: " . $pontos;
     return $resultado;
 });
+
+Route::get('comissão15', function (request $request) {
+    $valorTotal = $request->input('valor');
+    $desconto = 5;
+    $porcentagem = $valorTotal / 100;
+    $resultado = $valorTotal + ($porcentagem * $desconto);  
+    return $resultado;
+});
