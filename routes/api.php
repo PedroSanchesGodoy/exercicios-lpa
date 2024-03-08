@@ -49,3 +49,13 @@ Route::get('multiplicação', function (request $request) {
     $resultado = $numeroUm * $numeroDois;
     return $resultado;
 });
+
+Route::get('media', function (request $request) {
+    $numeroUm = $request->input('primeiroNumero');
+    $numeroDois = $request->input('segundoNumero');
+    $numerotres = $request->input('terceiroNumero');
+    $numeroQuatro = $request->input('quartoNumero');
+    $numeroCinco = $request->input('quintoNumero');
+    $resultado = ($numeroUm + $numeroDois + $numerotres + $numeroQuatro + $numeroCinco) / 5;
+    return $resultado;
+});
