@@ -88,3 +88,11 @@ Route::get('porcentagem', function (request $request) {
     $resultado = $valorOriginal - ($porcentagem * $desconto);  
     return $resultado;
 });
+
+Route::get('salario13', function (request $request) {
+    $salario = $request->input('valor');
+    $aumento = $request->input ('aumentoPercentual');
+    $porcentagem = $salario / 100;
+    $resultado = $salario . " " . $aumento . "% " . $porcentagem * $aumento + $salario;  
+    return $resultado;
+});
