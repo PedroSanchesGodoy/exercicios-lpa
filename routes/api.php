@@ -151,3 +151,14 @@ Route::get('compras17', function (request $request) {
     }
 
     });
+
+    route::get('par/impar', function(Request $request){
+        $numero = $request->input('numero');
+        
+    if($numero % 2){
+        return "impar";
+    } else {
+        return "par";
+    }
+
+    });
