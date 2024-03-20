@@ -145,9 +145,9 @@ Route::get('compras17', function (request $request) {
         $idade = $request->input('idade');
         
     if($idade > 18){
-        return "maior de idade";
+        return "Maior de idade";
     } else {
-        return "menor de idade";
+        return "Menor de idade";
     }
 
     });
