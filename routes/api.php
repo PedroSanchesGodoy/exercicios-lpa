@@ -162,3 +162,67 @@ Route::get('compras17', function (request $request) {
     }
 
     });
+
+
+    route::get('verifica/numero10', function(Request $request){
+        $numero = $request->input('numero');
+        
+    if($numero > 10){
+        return $numero . " é maior que 10.";
+    } else {
+        return $numero . " é menor que 10.";
+    }
+
+    });
+
+    route::get('verifica/temperatura', function(Request $request){
+        $temperatura = $request->input('temperaturaGraus');
+        
+    if($temperatura > 30){
+        return "Está quente!";
+    } else {
+        return "Está friozinho!";
+    }
+
+    });
+
+
+
+    Route::get('positivo/negativo', function(Request $request){
+        $numero = $request->input('numero');
+        
+    if($numero > 0){
+        return "Positivo";
+    } elseif($numero == 0){
+        return "Zero";
+    }else {
+        return "Negativo";
+    } 
+    
+
+    });
+
+
+    route::get('maior/numero', function(Request $request){
+        $numero1 = $request->input('numero1');
+        $numero2 = $request->input('numero2');
+        
+    if($numero1 > $numero2){
+        return $numero1;
+    } else {
+        return $numero2;
+    }
+
+    });
+
+
+    route::get('divisivel/tres', function(Request $request){
+        $numero = $request->input('numero');
+        
+    if($numero % 3){
+        return $numero . " não é divisivel por 3";
+    } else {
+        return $numero . " é divisivel por 3";
+    }
+
+    });
