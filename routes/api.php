@@ -221,8 +221,6 @@ Route::get('compras17', function (request $request) {
         
     if($numero % 3){
         return $numero . " não é divisivel por 3";
-    } if($numero = 0){
-        return "Nenhum numero é divisivel por 0";
     } else {
         return $numero . " é divisivel por 3";
     }
@@ -241,3 +239,14 @@ Route::get('compras17', function (request $request) {
     
     
         });
+
+    route::get('divisivel/Nove', function(Request $request){
+            $numero = $request->input('numero');
+            
+        if($numero % 9){
+            return $numero . " não é divisivel por 9";
+        } else {
+            return $numero . " é divisivel por 9";
+        }
+    
+        });    
