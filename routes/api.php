@@ -226,3 +226,16 @@ Route::get('compras17', function (request $request) {
     }
 
     });
+
+    Route::get('caralho', function(Request $request){
+        $tedio = $request->input('NivelTedio');
+        if($tedio < 5){
+            return "Da para aguentar";
+        } if($tedio > 7){
+            return "ALGUEM ME MATA!!!";
+        } else {
+            return "Tedio";
+        } 
+    
+    
+        });
