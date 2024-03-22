@@ -240,7 +240,74 @@ Route::get('compras17', function (request $request) {
     
         });
 
-    route::get('divisivel/Nove', function(Request $request){
+
+
+
+
+
+
+
+        route::get('lista/exercicio1', function(Request $request){
+            $numero = $request->input('numero');
+            
+        if($numero > 10){
+            return $numero . " é maior que 10.";
+        } else {
+            return $numero . " é menor que 10.";
+        }
+    
+        });
+    
+        Route::get('lista/exercicio2', function(Request $request){
+            $numero = $request->input('numero');
+            
+        if($numero > 0){
+            return "Positivo";
+        } elseif($numero == 0){
+            return "Zero";
+        }else {
+            return "Negativo";
+        } 
+        
+    
+        });
+
+        route::get('lista/exercicio3', function(Request $request){
+            $idade = $request->input('idade');
+            
+        if($idade >= 18){
+            return "Maior de idade";
+        } else {
+            return "Menor de idade";
+        }
+    
+        });
+
+        route::get('lista/exercicio4', function(Request $request){
+            $numero = $request->input('numero');
+            
+        if($numero % 2){
+            return "impar";
+        } else {
+            return "par";
+        }
+    
+        });
+
+        route::get('lista/exercicio5', function(Request $request){
+            $numero1 = $request->input('numero1');
+            $numero2 = $request->input('numero2');
+            
+        if($numero1 > $numero2){
+            return $numero1;
+        } else {
+            return $numero2;
+        }
+    
+        });
+
+
+    route::get('lista/exercicio6', function(Request $request){
             $numero = $request->input('numero');
             
         if($numero % 9){
@@ -250,3 +317,164 @@ Route::get('compras17', function (request $request) {
         }
     
         });    
+
+
+    route::get('lista/exercicio7', function(Request $request){
+            $temperatura = $request->input('temperaturaGraus');
+            
+        if($temperatura > 30){
+            return "Está quente!";
+        } else {
+            return "Está friozinho!";
+        }
+    
+        });
+    
+    
+    route::get('lista/exercicio8', function(Request $request){
+            $numero = $request->input('numero');
+            
+        if($numero % 7){
+            return $numero . " não é multiplo de 7";
+        } else {
+            return $numero . " é multiplo de 7";
+        }
+    
+        });  
+
+    route::get('lista/exercicio9', function(Request $request){
+            $idade = $request->input('idade');
+            
+        if($idade >= 12){
+            return "Você não é mais criança!";
+        } else {
+            return "Você é uma criança!";
+        }
+    
+        });    
+
+    Route::get('lista/exercicio10', function(Request $request){
+        $numero = $request->input('numero');
+
+        if($numero > 0){
+           if($numero % 2){
+            return "positivo e ímpar.";
+           } 
+        }
+        
+    });
+
+    Route::get('lista/exercicio11', function(Request $request){
+        $numero = $request->input('numero');
+        
+    if($numero > 100){
+        return "O numero é maior que 100";
+    } elseif($numero == 100){
+        return "O numero é 100";
+    }else {
+        return "O numero é menor que 100";
+    } 
+    
+
+    });
+
+    route::get('lista/exercicio12', function(Request $request){
+        $numero = $request->input('numero');
+        
+    if($numero % 6){    
+        return $numero . " não é divisivel por 6";
+    } else {
+        return $numero . " é divisivel por 6";
+    }
+
+    }); 
+
+
+    Route::get('lista/exercicio13', function(Request $request){
+        $nome = $request->input('Nome');
+        
+        if($nome == "Alice"){
+            return "Olá, " . $nome;
+        } else{
+            return " ";
+        }
+    });
+
+    
+    Route::get('lista/exercicios14', function(Request $request){
+        $idade = $request->input('idade');
+        $carteira = $request->input('carteira');
+
+        if($idade >= 18){
+            if($carteira == "Sim"){
+                return "Pode dirigir";
+            }
+        }
+    });
+
+    Route::get('lista/exercicio16', function(Request $request){
+        $numero1 = $request->input('numero1');
+        $numero2 = $request->input('numero2');
+
+        if($numero1 = $numero2){ 
+        } elseif($numero1 > $numero2){
+            return $numero1;
+            } else{
+                return $numero2;
+            }
+        
+    });
+
+    route::get('lista/exercicio17', function(Request $request){
+        $idade = $request->input('idade');
+        $nome = $request->input('nome');
+        
+    if($idade >= 18){
+        return "Você é maior de idade, " . $nome . "!";
+    }
+
+    });    
+
+    route::get('lista/exercicio18', function(Request $request){
+        $numero1 = $request->input('numero1');
+        $numero2 = $request->input('numero2');
+        $resultado = $numero1 / $numero2;
+        
+        if($numero1 != 0){
+            if($numero2 != 0){
+             return $resultado;
+            } 
+        } if($numero1 == 0){
+            return "Não é possível efetuar a divisão pois o primeiro número é zero";
+        } if($numero2 == 0){
+            return "não é possível efetuar a divisão pois o segundo número é zero";
+        }
+    });
+
+
+    route::get('lista/exercicio19', function(Request $request){
+        $numero1 = $request->input('numero1');
+        $numero2 = $request->input('numero2');
+        $resultado = $numero1 * $numero2;
+
+        if($resultado > 100){
+            return $resultado . " é maior que 100";
+        } else{
+            return $resultado . " é menor que 100";
+        }
+
+    });
+
+    route::get('lista/exercicio20', function(Request $request){
+        $numero1 = $request->input('numero1');
+        $numero2 = $request->input('numero2');
+        $misterio = $numero1 + $numero2;
+        if($misterio % 2){
+            return $numero1 / $numero2;
+        } else {
+            return $numero1 * $numero2;
+        }
+    
+
+
+    });
