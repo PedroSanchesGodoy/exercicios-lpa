@@ -221,6 +221,8 @@ Route::get('compras17', function (request $request) {
         
     if($numero % 3){
         return $numero . " não é divisivel por 3";
+    } if($numero = 0){
+        return "Nenhum numero é divisivel por 0";
     } else {
         return $numero . " é divisivel por 3";
     }
