@@ -83,17 +83,17 @@ Route::get('retangulo', function (request $request) {
 
 Route::get('porcentagem', function (request $request) {
     $valorOriginal = $request->input('valor');
-    $desconto = $request->input ('desconto');
+    $desconto = $request->input('desconto');
     $porcentagem = $valorOriginal / 100;
-    $resultado = $valorOriginal - ($porcentagem * $desconto);  
+    $resultado = $valorOriginal - ($porcentagem * $desconto);
     return $resultado;
 });
 
 Route::get('salario13', function (request $request) {
     $salario = $request->input('valor');
-    $aumento = $request->input ('aumentoPercentual');
+    $aumento = $request->input('aumentoPercentual');
     $porcentagem = $salario / 100;
-    $resultado = $salario . " " . $aumento . "% " . $porcentagem * $aumento + $salario;  
+    $resultado = $salario . " " . $aumento . "% " . $porcentagem * $aumento + $salario;
     return $resultado;
 });
 
@@ -108,7 +108,7 @@ Route::get('comissão15', function (request $request) {
     $valorTotal = $request->input('valor');
     $desconto = 5;
     $porcentagem = $valorTotal / 100;
-    $resultado = $valorTotal + ($porcentagem * $desconto);  
+    $resultado = $valorTotal + ($porcentagem * $desconto);
     return $resultado;
 });
 
@@ -126,119 +126,108 @@ Route::get('compras17', function (request $request) {
     $quantidade = $request->input('quantidadeComprada');
     $resultado = "valor total: " . $precoProduto * $quantidade;
     return $resultado;
-    });
+});
 
-    route::get('exemplo/condicao', function (Request $request) {
+route::get('exemplo/condicao', function (Request $request) {
     $Idade = $request->input('idade');
     $retorno = "";
-    if($Idade >= 18){
-    $retorno = "Maior de idade";
-    }
-    else{
+    if ($Idade >= 18) {
+        $retorno = "Maior de idade";
+    } else {
         $retorno = "Menor de idade";
     }
     return $retorno;
+});
 
-    });
+route::get('verifica/idade', function (Request $request) {
+    $idade = $request->input('idade');
 
-    route::get('verifica/idade', function(Request $request){
-        $idade = $request->input('idade');
-        
-    if($idade >= 18){
+    if ($idade >= 18) {
         return "Maior de idade";
     } else {
         return "Menor de idade";
     }
+});
 
-    });
+route::get('par/impar', function (Request $request) {
+    $numero = $request->input('numero');
 
-    route::get('par/impar', function(Request $request){
-        $numero = $request->input('numero');
-        
-    if($numero % 2){
+    if ($numero % 2) {
         return "impar";
     } else {
         return "par";
     }
+});
 
-    });
 
+route::get('verifica/numero10', function (Request $request) {
+    $numero = $request->input('numero');
 
-    route::get('verifica/numero10', function(Request $request){
-        $numero = $request->input('numero');
-        
-    if($numero > 10){
+    if ($numero > 10) {
         return $numero . " é maior que 10.";
     } else {
         return $numero . " é menor que 10.";
     }
+});
 
-    });
+route::get('verifica/temperatura', function (Request $request) {
+    $temperatura = $request->input('temperaturaGraus');
 
-    route::get('verifica/temperatura', function(Request $request){
-        $temperatura = $request->input('temperaturaGraus');
-        
-    if($temperatura > 30){
+    if ($temperatura > 30) {
         return "Está quente!";
     } else {
         return "Está friozinho!";
     }
-
-    });
-
+});
 
 
-    Route::get('positivo/negativo', function(Request $request){
-        $numero = $request->input('numero');
-        
-    if($numero > 0){
+
+Route::get('positivo/negativo', function (Request $request) {
+    $numero = $request->input('numero');
+
+    if ($numero > 0) {
         return "Positivo";
-    } elseif($numero == 0){
+    } elseif ($numero == 0) {
         return "Zero";
-    }else {
+    } else {
         return "Negativo";
-    } 
-    
-
-    });
+    }
+});
 
 
-    route::get('maior/numero', function(Request $request){
-        $numero1 = $request->input('numero1');
-        $numero2 = $request->input('numero2');
-        
-    if($numero1 > $numero2){
+route::get('maior/numero', function (Request $request) {
+    $numero1 = $request->input('numero1');
+    $numero2 = $request->input('numero2');
+
+    if ($numero1 > $numero2) {
         return $numero1;
     } else {
         return $numero2;
     }
+});
 
-    });
 
+route::get('divisivel/tres', function (Request $request) {
+    $numero = $request->input('numero');
 
-    route::get('divisivel/tres', function(Request $request){
-        $numero = $request->input('numero');
-        
-    if($numero % 3){
+    if ($numero % 3) {
         return $numero . " não é divisivel por 3";
     } else {
         return $numero . " é divisivel por 3";
     }
+});
 
-    });
-
-    Route::get('caralho', function(Request $request){
-        $tedio = $request->input('NivelTedio');
-        if($tedio < 5){
-            return "Da para aguentar";
-        } if($tedio > 7){
-            return "ALGUEM ME MATA!!!";
-        } else {
-            return "Tedio";
-        } 
-    
-    
-        });
+Route::get('caralho', function (Request $request) {
+    $tedio = $request->input('NivelTedio');
+    if ($tedio < 5) {
+        return "Da para aguentar";
+    }
+    if ($tedio > 7) {
+        return "ALGUEM ME MATA!!!";
+    } else {
+        return "Tedio";
+    }
+});
 
 
 
@@ -247,234 +236,336 @@ Route::get('compras17', function (request $request) {
 
 
 
-        route::get('lista/exercicio1', function(Request $request){
-            $numero = $request->input('numero');
-            
-        if($numero > 10){
-            return $numero . " é maior que 10.";
-        } else {
-            return $numero . " é menor que 10.";
-        }
-    
-        });
-    
-        Route::get('lista/exercicio2', function(Request $request){
-            $numero = $request->input('numero');
-            
-        if($numero > 0){
-            return "Positivo";
-        } elseif($numero == 0){
-            return "Zero";
-        }else {
-            return "Negativo";
-        } 
-        
-    
-        });
+route::get('lista/exercicio1', function (Request $request) {
+    $numero = $request->input('numero');
 
-        route::get('lista/exercicio3', function(Request $request){
-            $idade = $request->input('idade');
-            
-        if($idade >= 18){
-            return "Maior de idade";
-        } else {
-            return "Menor de idade";
-        }
-    
-        });
+    if ($numero > 10) {
+        return $numero . " é maior que 10.";
+    } else {
+        return $numero . " é menor que 10.";
+    }
+});
 
-        route::get('lista/exercicio4', function(Request $request){
-            $numero = $request->input('numero');
-            
-        if($numero % 2){
-            return "impar";
-        } else {
-            return "par";
-        }
-    
-        });
+Route::get('lista/exercicio2', function (Request $request) {
+    $numero = $request->input('numero');
 
-        route::get('lista/exercicio5', function(Request $request){
-            $numero1 = $request->input('numero1');
-            $numero2 = $request->input('numero2');
-            
-        if($numero1 > $numero2){
-            return $numero1;
-        } else {
-            return $numero2;
-        }
-    
-        });
+    if ($numero > 0) {
+        return "Positivo";
+    } elseif ($numero == 0) {
+        return "Zero";
+    } else {
+        return "Negativo";
+    }
+});
+
+route::get('lista/exercicio3', function (Request $request) {
+    $idade = $request->input('idade');
+
+    if ($idade >= 18) {
+        return "Maior de idade";
+    } else {
+        return "Menor de idade";
+    }
+});
+
+route::get('lista/exercicio4', function (Request $request) {
+    $numero = $request->input('numero');
+
+    if ($numero % 2) {
+        return "impar";
+    } else {
+        return "par";
+    }
+});
+
+route::get('lista/exercicio5', function (Request $request) {
+    $numero1 = $request->input('numero1');
+    $numero2 = $request->input('numero2');
+
+    if ($numero1 > $numero2) {
+        return $numero1;
+    } else {
+        return $numero2;
+    }
+});
 
 
-    route::get('lista/exercicio6', function(Request $request){
-            $numero = $request->input('numero');
-            
-        if($numero % 9){
-            return $numero . " não é divisivel por 9";
-        } else {
-            return $numero . " é divisivel por 9";
-        }
-    
-        });    
+route::get('lista/exercicio6', function (Request $request) {
+    $numero = $request->input('numero');
+
+    if ($numero % 9) {
+        return $numero . " não é divisivel por 9";
+    } else {
+        return $numero . " é divisivel por 9";
+    }
+});
 
 
-    route::get('lista/exercicio7', function(Request $request){
-            $temperatura = $request->input('temperaturaGraus');
-            
-        if($temperatura > 30){
-            return "Está quente!";
-        } else {
-            return "Está friozinho!";
-        }
-    
-        });
-    
-    
-    route::get('lista/exercicio8', function(Request $request){
-            $numero = $request->input('numero');
-            
-        if($numero % 7){
-            return $numero . " não é multiplo de 7";
-        } else {
-            return $numero . " é multiplo de 7";
-        }
-    
-        });  
+route::get('lista/exercicio7', function (Request $request) {
+    $temperatura = $request->input('temperaturaGraus');
 
-    route::get('lista/exercicio9', function(Request $request){
-            $idade = $request->input('idade');
-            
-        if($idade >= 12){
-            return "Você não é mais criança!";
-        } else {
-            return "Você é uma criança!";
-        }
-    
-        });    
+    if ($temperatura > 30) {
+        return "Está quente!";
+    } else {
+        return "Está friozinho!";
+    }
+});
 
-    Route::get('lista/exercicio10', function(Request $request){
-        $numero = $request->input('numero');
 
-        if($numero > 0){
-           if($numero % 2){
+route::get('lista/exercicio8', function (Request $request) {
+    $numero = $request->input('numero');
+
+    if ($numero % 7) {
+        return $numero . " não é multiplo de 7";
+    } else {
+        return $numero . " é multiplo de 7";
+    }
+});
+
+route::get('lista/exercicio9', function (Request $request) {
+    $idade = $request->input('idade');
+
+    if ($idade >= 12) {
+        return "Você não é mais criança!";
+    } else {
+        return "Você é uma criança!";
+    }
+});
+
+Route::get('lista/exercicio10', function (Request $request) {
+    $numero = $request->input('numero');
+
+    if ($numero > 0) {
+        if ($numero % 2) {
             return "positivo e ímpar.";
-           } 
         }
-        
-    });
+    }
+});
 
-    Route::get('lista/exercicio11', function(Request $request){
-        $numero = $request->input('numero');
-        
-    if($numero > 100){
+Route::get('lista/exercicio11', function (Request $request) {
+    $numero = $request->input('numero');
+
+    if ($numero > 100) {
         return "O numero é maior que 100";
-    } elseif($numero == 100){
+    } elseif ($numero == 100) {
         return "O numero é 100";
-    }else {
+    } else {
         return "O numero é menor que 100";
-    } 
-    
+    }
+});
 
-    });
+route::get('lista/exercicio12', function (Request $request) {
+    $numero = $request->input('numero');
 
-    route::get('lista/exercicio12', function(Request $request){
-        $numero = $request->input('numero');
-        
-    if($numero % 6){    
+    if ($numero % 6) {
         return $numero . " não é divisivel por 6";
     } else {
         return $numero . " é divisivel por 6";
     }
+});
 
-    }); 
+
+Route::get('lista/exercicio13', function (Request $request) {
+    $nome = $request->input('Nome');
+
+    if ($nome == "Alice") {
+        return "Olá, " . $nome;
+    } else {
+        return " ";
+    }
+});
 
 
-    Route::get('lista/exercicio13', function(Request $request){
-        $nome = $request->input('Nome');
-        
-        if($nome == "Alice"){
-            return "Olá, " . $nome;
-        } else{
-            return " ";
+Route::get('lista/exercicios14', function (Request $request) {
+    $idade = $request->input('idade');
+    $carteira = $request->input('carteira');
+
+    if ($idade >= 18) {
+        if ($carteira == "Sim") {
+            return "Pode dirigir";
         }
-    });
+    }
+});
 
-    
-    Route::get('lista/exercicios14', function(Request $request){
-        $idade = $request->input('idade');
-        $carteira = $request->input('carteira');
+Route::get('lista/exercicio16', function (Request $request) {
+    $numero1 = $request->input('numero1');
+    $numero2 = $request->input('numero2');
 
-        if($idade >= 18){
-            if($carteira == "Sim"){
-                return "Pode dirigir";
-            }
-        }
-    });
+    if ($numero1 = $numero2) {
+    } elseif ($numero1 > $numero2) {
+        return $numero1;
+    } else {
+        return $numero2;
+    }
+});
 
-    Route::get('lista/exercicio16', function(Request $request){
-        $numero1 = $request->input('numero1');
-        $numero2 = $request->input('numero2');
+route::get('lista/exercicio17', function (Request $request) {
+    $idade = $request->input('idade');
+    $nome = $request->input('nome');
 
-        if($numero1 = $numero2){ 
-        } elseif($numero1 > $numero2){
-            return $numero1;
-            } else{
-                return $numero2;
-            }
-        
-    });
-
-    route::get('lista/exercicio17', function(Request $request){
-        $idade = $request->input('idade');
-        $nome = $request->input('nome');
-        
-    if($idade >= 18){
+    if ($idade >= 18) {
         return "Você é maior de idade, " . $nome . "!";
     }
+});
 
-    });    
+route::get('lista/exercicio18', function (Request $request) {
+    $numero1 = $request->input('numero1');
+    $numero2 = $request->input('numero2');
+    $resultado = $numero1 / $numero2;
 
-    route::get('lista/exercicio18', function(Request $request){
-        $numero1 = $request->input('numero1');
-        $numero2 = $request->input('numero2');
-        $resultado = $numero1 / $numero2;
+    if ($numero1 != 0) {
+        if ($numero2 != 0) {
+            return $resultado;
+        }
+    }
+    if ($numero1 == 0) {
+        return "Não é possível efetuar a divisão pois o primeiro número é zero";
+    }
+    if ($numero2 == 0) {
+        return "não é possível efetuar a divisão pois o segundo número é zero";
+    }
+});
+
+
+route::get('lista/exercicio19', function (Request $request) {
+    $numero1 = $request->input('numero1');
+    $numero2 = $request->input('numero2');
+    $resultado = $numero1 * $numero2;
+
+    if ($resultado > 100) {
+        return $resultado . " é maior que 100";
+    } else {
+        return $resultado . " é menor que 100";
+    }
+});
+
+route::get('lista/exercicio20', function (Request $request) {
+    $numero1 = $request->input('numero1');
+    $numero2 = $request->input('numero2');
+    $misterio = $numero1 + $numero2;
+    if ($misterio % 2) {
+        return $numero1 / $numero2;
+    } else {
+        return $numero1 * $numero2;
+    }
+});
+
+
+
+
+
+
+
+Route::get('nova/lista/exercicio1', function (Request $request) {
+    $numero1 = $request->input('nota1');
+    $numero2 = $request->input('nota2');
+    $numero3 = $request->input('nota3');
+    $metade = $numero1 + $numero2 + $numero3;
+    $resultado = $metade / 3;
+    if ($resultado >= 7) {
+        return "Aprovado!!";
+    } else {
+        return "Reprovado!!";
+    }
+});
+
+Route::get('nova/lista/exercicio2', function (Request $request) {
+    $renda = $request->input('renda');
+    if ($renda <= 1900){
+        return "Sem imposto";
+    } if (1901 <= $renda){
+        if($renda < 2800){
+        $calculo1 = $renda * 7;
+        $calculo2 = $calculo1 / 100;
         
-        if($numero1 != 0){
-            if($numero2 != 0){
-             return $resultado;
-            } 
-        } if($numero1 == 0){
-            return "Não é possível efetuar a divisão pois o primeiro número é zero";
-        } if($numero2 == 0){
-            return "não é possível efetuar a divisão pois o segundo número é zero";
-        }
-    });
+        return $calculo2 . " de imposto";
+    } } if (2801 <= $renda){
+        if ($renda > 3700){
+        $calculo3 = $renda * 15;
+        $calculo4 = $calculo3 / 100;
+       
+        return $calculo4 . " de imposto";
+    }} if ($renda > 3700){
+        $calculo5 = $renda * 22;
+        $calculo6 = $calculo5 / 100;
+       
+        return $calculo6 . " de imposto";
+    }
+});
 
 
-    route::get('lista/exercicio19', function(Request $request){
-        $numero1 = $request->input('numero1');
-        $numero2 = $request->input('numero2');
-        $resultado = $numero1 * $numero2;
+Route::get('nova/lista/exercicio3', function (Request $request) {
+  $ano = $request->input('ano');
+  if ($ano % 4 == 0){
+    return "Ano bissexto";
+  } else {
+    return "Ano não bissexto";
+  }
+});
 
-        if($resultado > 100){
-            return $resultado . " é maior que 100";
-        } else{
-            return $resultado . " é menor que 100";
-        }
-
-    });
-
-    route::get('lista/exercicio20', function(Request $request){
-        $numero1 = $request->input('numero1');
-        $numero2 = $request->input('numero2');
-        $misterio = $numero1 + $numero2;
-        if($misterio % 2){
-            return $numero1 / $numero2;
-        } else {
-            return $numero1 * $numero2;
-        }
-    
+Route::get('nova/lista/exercicio4', function (Request $request) {
+$valor = $request->input('valorTotal');
+if ($valor >= 1000){
+    $meio = $valor * 15;
+    $quase = $meio / 100;
+    $resultado = $valor - $quase;
+    return $resultado;
+} else {
+    return $valor;
+}
+});
 
 
-    });
+Route::get('nova/lista/exercicio5', function (Request $request) {
+$altura = $request->input('altura');
+$peso = $request->input('peso');
+$altura2 = $altura * $altura;
+$imc = $peso / $altura2;
+if ($imc < 18.5){
+    return "Abaixo do peso";
+} if ($imc >= 18.5){
+    if ($imc <= 24.9){
+        return "peso normal";
+    }
+} if ($imc >= 25){
+    if ($imc <= 29.9){
+        return "Sobrepeso";
+    }
+} if ($imc >= 30){
+    if ($imc <= 34.9){
+        return "Obesidade grau I";
+    }
+} if ($imc >= 35){
+    if ($imc <= 39.9){
+        return "Obesidade grau II";
+    }
+} if ($imc >= 40){
+    if ($imc <= 49.9){
+        return "Obesidade grau III";
+    }
+}
+
+});
+
+Route::get('nova/lista/exercicio6', function (Request $request) {
+    $salario = $request->input('salario');
+    $codigo = $request->input('codigo');
+    if ($codigo == 1){
+        $aumento1 = $salario * 5;
+        $aumento2 = $aumento1 / 100;
+        return "Aumento salarial de " . $aumento2;
+    } if ($codigo == 2){
+        $aumento3 = $salario * 10;
+        $aumento4 = $aumento3 / 100;
+        return "Aumento salarial de " . $aumento4;
+    } if ($codigo == 3){
+        $aumento5 = $salario * 15;
+        $aumento6 = $aumento5 / 100;
+        return "Aumento salarial de " . $aumento6;
+    } if ($codigo == 4){
+        $aumento7 = $salario * 20;
+        $aumento8 = $aumento7 / 100;
+        return "Aumento salarial de " . $aumento8;
+    }
+
+});
