@@ -540,9 +540,7 @@ if ($imc < 18.5){
         return "Obesidade grau II";
     }
 } if ($imc >= 40){
-    if ($imc <= 49.9){
         return "Obesidade grau III";
-    }
 }
 
 });
