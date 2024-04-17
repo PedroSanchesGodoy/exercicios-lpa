@@ -567,3 +567,27 @@ Route::get('nova/lista/exercicio6', function (Request $request) {
     }
 
 });
+
+ Route::get('cachorro', function (Request $request) {
+    $numero = $request->input('numero');
+    if ($numero % 2 ==0){
+        if ($numero <= 9){
+            return "Seu número é unidade e par";
+        } if ($numero <= 99){
+            return "Seu número é dezena e par";
+        } if ($numero <= 999){
+            return "Seu número é centena e par";
+        }
+    }
+    if ($numero % 2 != 0){
+        if ($numero <= 9){
+            return "Seu número é unidade e impar";
+        } if ($numero <= 99){
+            return "Seu número é dezena e impar";
+        } if ($numero <= 999){
+            return "Seu número é centena e impar";
+        }
+    }
+  
+
+ });
